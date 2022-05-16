@@ -1,0 +1,11 @@
+node_modules/
+public/
+src/
+package-lock.json
+.gitignore
+
+rollup.config.js
+tsconfig.json
+
+.vscode/
+.DS_Store

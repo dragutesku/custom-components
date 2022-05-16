@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>
+    time-formated
+  </title>
+  <link rel="stylesheet" href="public/reset.css">
+	<script src='dist/time-formated.js'></script>
+</head>
+
+<body>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+  </style>
+  <h1>
+    WEBCOMPONENT: time-formated
+  </h1>
+
+
+  <time-formated id="elem" year="numeric" hour="numeric" minute="numeric" second="numeric"></time-formated>
+
+  <script>
+  setInterval(() => elem.setAttribute('datetime', new Date()), 1000); // (5)
+  </script>
+</body>
+</html>

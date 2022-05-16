@@ -1,0 +1,28 @@
+# Project #
+build/**
+dist/**
+.next/**
+.cache/
+dist/
+.history/
+public/static/
+.vscode
+taskbox/node_modules/
+# Node / NPM / YARN
+node_modules/
+npm-debug.log
+npm-debug.log.*
+lerna-debug.log
+.turbo
+
+# IntelliJ
+.idea/
+*.code-workspace
+
+# OS X
+.DS_Store
+
+# Misc
+coverage/
+junit.xml
+

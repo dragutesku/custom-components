@@ -1,0 +1,40 @@
+{
+  "name": "{{#if namespace}}{{ namespace }}/{{/if}}{{ name }}",
+  "version": "1.0.0",
+  "main": "index.js",
+
+  "scripts": {
+    "start": "sirv public",
+    "build": "cross-env NODE_ENV=\"production\" rollup -c",
+    "dev": "cross-env NODE_ENV=\"development\" rollup -c -w",
+    "setup-ts": "cross-env node ./scripts/setupTypeScript.js && lerna bootstrap",
+    "lint": "eslint './{src,test}/**/*.js'",
+    "format": "prettier --write './{src,test}/**/*.{js,json}'",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "rollup": "^2.3.4",
+    "rollup-plugin-dev-server": "^0.4.3",
+    "rollup-plugin-livereload": "^2.0.0",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "eslint": "^7.25.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1",
+    "mocha": "^8.4.0"
+  },
+  
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "sirv-cli": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

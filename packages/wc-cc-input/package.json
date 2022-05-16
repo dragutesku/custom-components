@@ -1,0 +1,38 @@
+{
+  "name": "@componentchest/wc-cc-input",
+  "version": "0.0.0",
+  "main": "./dist/wc-cc-input.umd.js",
+  "module": "./dist/wc-cc-input.es.js",
+  "exports": {
+  
+    ".": {
+      "import": "./dist/wc-cc-input.es.js",
+      "require": "./dist/wc-cc-input.umd.js"
+    }
+  },
+  "types": "types/wc-cc-input.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "start": "sirv public",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:watch": "tsc && vite build --watch",
+    "lint": "eslint './{src,test}/**/*.js'",
+    "format": "prettier --write './{src,test}/**/*.{js,json}'",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "simple-keyboard": "^3.1.23",
+    "lit": "^2.0.0"
+  },
+  "devDependencies": {
+    "vite": "^2.6.4",
+    "typescript": "^4.3.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

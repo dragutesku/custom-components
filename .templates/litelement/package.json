@@ -1,0 +1,37 @@
+{
+  "name": "{{#if namespace}}{{ namespace }}/{{/if}}{{ name }}",
+  "version": "0.0.0",
+  "main": "./dist/{{name}}.umd.js",
+  "module": "./dist/{{name}}.es.js",
+  "exports": {
+  
+    ".": {
+      "import": "./dist/{{name}}.es.js",
+      "require": "./dist/{{name}}.umd.js"
+    }
+  },
+  "types": "types/{{name}}.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "scripts": {
+    "start": "sirv public",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:watch": "tsc && vite build --watch",
+    "lint": "eslint './{src,test}/**/*.js'",
+    "format": "prettier --write './{src,test}/**/*.{js,json}'",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "lit": "^2.0.0"
+  },
+  "devDependencies": {
+    "vite": "^2.6.4",
+    "typescript": "^4.3.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

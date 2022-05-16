@@ -1,0 +1,60 @@
+{
+  "name": "@componentchest/widgets",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build:storybook:addons": "npm --prefix .storybook/addons/login/ install && npm --prefix .storybook/addons/login run build",
+    "build:storybook": "build-storybook",
+    "publish:next": "lerna publish --dist-tag next --force-publish",
+    "publish:latest": "lerna publish --dist-tag latest --force-publish"
+  },
+  "dependencies": {
+    "core-js": "^3.20.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.14",
+    "@storybook/addon-actions": "^6.3.6",
+    "@storybook/addon-essentials": "^6.3.6",
+    "@storybook/addon-links": "^6.3.6",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addon-viewport": "^6.3.6",
+    "@storybook/web-components": "^6.3.6",
+    "babel-loader": "^8.2.2",
+    "lerna": "^3.22.1",
+    "plop": "^2.7.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "turbo": "^1.0.19"
+  },
+  "turbo": {
+    "baseBranch": "origin/master",
+    "pipeline": {
+      "build": {
+        "dependsOn": ["^build"],
+        "outputs": [".next/**"]
+      },
+      "test": {
+        "dependsOn": ["^build"],
+        "outputs": []
+      },
+      "lint": {
+        "outputs": []
+      },
+      "dev": {
+        "cache": false
+      },
+      "publish:next": {
+        "dependsOn": ["^build"],
+        "outputs": []
+      },
+      "publish:latest": {
+        "dependsOn": ["^build"],
+        "outputs": []
+      }
+    }
+  }
+}
